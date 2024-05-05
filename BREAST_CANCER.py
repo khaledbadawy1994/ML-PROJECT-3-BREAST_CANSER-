@@ -315,7 +315,7 @@ predictors=data.columns[1:]
 
 data[predictors].hist(figsize=(18,18))
 
-We can see that most of the features are right skewed . Therefore, it would be better if we scaled the features.
+#We can see that most of the features are right skewed . Therefore, it would be better if we scaled the features.
 
 for col in predictors:
     sns.scatterplot(x=data[col],y=data['diagnosis'])
