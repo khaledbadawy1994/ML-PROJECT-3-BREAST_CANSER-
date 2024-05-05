@@ -562,7 +562,7 @@ print(confusion_matrix(y_test, predictions))
 
 We can see that we achieve an accuracy of 95.28% on the held-out test dataset. From the confusion matrix, there is only 3 case of mis-classification. The performance of this algorithm is expected to be high given the symptoms for breast cancer should exchibit certain clear patterns.
 
-Ridge Classifier¶
+#Ridge Classifier¶
 
 # Ridge Classifier with VIF features and hyperparameter tuning
 from sklearn.linear_model import RidgeClassifier
@@ -592,7 +592,7 @@ print('\033[1m' +'Confusion Matrix : '+ '\033[0m')
 sns.heatmap(cm, cmap = 'OrRd',annot = True, fmt='d')
 plt.show()
 
-Gradient Boosting
+#Gradient Boosting
 
 # Gradient Boosting Classifier  with VIF features  and hyperparameter tuning
 
@@ -630,7 +630,7 @@ print(y_test)
 
 print(predictions)
 
-Random_forest
+#Random_forest
 
 Finding best n_estimators value
 
@@ -650,9 +650,9 @@ print(classification_report(y_test, y_test_pred_gr))
 rf=RandomForestClassifier(n_estimators=400).fit(X_train,y_train)
 RandomForestClassifier(n_estimators=150, random_state=42)
 
-Random Forest Classifier gives an accuracy of 94%
+#Random Forest Classifier gives an accuracy of 94%
 
-DecisionTree
+#DecisionTree
 
 from sklearn.tree import DecisionTreeClassifier
 
@@ -661,7 +661,7 @@ dt = dt.fit(X_train, y_train)
 y_pred = dt.predict(X_test)
 print(classification_report(y_test, y_pred))
 
-Decision Tree gives an accuracy of just 91%
+#Decision Tree gives an accuracy of just 91%
 
 from sklearn.model_selection import GridSearchCV
 
@@ -679,9 +679,9 @@ GR.best_estimator_.tree_.node_count, GR.best_estimator_.tree_.max_depth
 
 y_test_pred_gr = GR.predict(X_test)
 
-Decision Tree gives an accuracy of just 92%
+#Decision Tree gives an accuracy of just 92%
 
-Feature importances
+#Feature importances
 
 feature_imp = pd.Series(dt.feature_importances_,index=data.columns[1:]).sort_values(ascending=False)
 
@@ -689,13 +689,13 @@ ax = feature_imp.plot(kind='bar', figsize=(16, 6))
 ax.set(ylabel='Relative Importance');
 ax.set(xlabel='Feature');
 
-This shows that only -
+#This shows that only -
 
-perimeter_worst,concave_points_worst,compactness_worst,texture_worst,texture_mean,area_se, radius_mean,fractal_dimension_worst,symmetry_worst,smoothness_worst,compactness_se,perimeter_mean
+#perimeter_worst,concave_points_worst,compactness_worst,texture_worst,texture_mean,area_se, radius_mean,fractal_dimension_worst,symmetry_worst,smoothness_worst,compactness_se,perimeter_mean
 
-could have been used as they are the only important features
+#could have been used as they are the only important features
 
-Naive_bayes
+#Naive_bayes
 
 for i in range(1,20): # Loop to try all error rates from 1 to 20
     rfe = RandomForestClassifier(n_estimators=i*10) # Create rfc with number of estimators with value i*10
@@ -721,9 +721,9 @@ print(confusion_matrix(y_test,y_pred1))
 print(accuracy_score(y_test,y_pred1))
 print(classification_report(y_test,y_pred1))
 
-Naive bayes gives an accuracy of just 94%
+#Naive bayes gives an accuracy of just 94%
 
-Random forest classifier
+#Random forest classifier
 
 rfc = RandomForestClassifier(n_estimators=180,max_features='auto', max_depth=8, n_jobs=-1)
 rfc.fit(X_train,y_train)
@@ -735,7 +735,7 @@ print(classification_report(y_test,rfcpred))
 #Confusion matrix
 sns.heatmap(confusion_matrix(y_test,rfcpred), annot=True,cmap='Greens',fmt='g',linewidth=2,linecolor='black')
 
-Supervised Learning with Support Vector Machine
+#Supervised Learning with Support Vector Machine
 
 from sklearn import svm
 svc_clr = svm.SVC(kernel='linear')
@@ -746,15 +746,15 @@ accuracy_score(y_test, y_pred_scv)
 print(classification_report(y_test, y_pred_scv))
 
 # This is formatted as code
-Support Vector Machine gives an accuracy of just 95%
+#Support Vector Machine gives an accuracy of just 95%
 
-Feature scaling
+#Feature scaling
 
 sc = StandardScaler()
 X_train_sc = sc.fit_transform(X_train)
 X_test_sc = sc.transform(X_test)
 
-Train with Standard scaled Data
+#Train with Standard scaled Data
 
 svc_clr2 = SVC()
 svc_clr2.fit(X_train_sc, y_train)
@@ -763,12 +763,12 @@ accuracy_score(y_test, y_pred_svc_sc)
 
 print(classification_report(y_test, y_pred_svc_sc))
              
-Support Vector Machine gives an accuracy of 97%
+#Support Vector Machine gives an accuracy of 97%
 
-Conclusions 1) Since this is a medical problem our main objective is to accuractly predict the malignant tumors i.e the label 1 . Therefore, the main aim should be to decrease the number of false negatives and have the highest possible recall as possible. This can be achieved by any of the 98% classifiers . However, I would reccomend using the gradient boosted algorithm as it has the highest recall for both the classes.
+#Conclusions 1) Since this is a medical problem our main objective is to accuractly predict the malignant tumors i.e the label 1 . Therefore, the main aim should be to decrease the number of false negatives and have the highest possible recall as possible. This can be achieved by any of the 98% classifiers . However, I would reccomend using the gradient boosted algorithm as it has the highest recall for both the classes.
 
-2) Only some of the features are really important out of the 33 features with which we started . We can clearly see grid seach showing the maximum number of features used were 3 and the feature importances showed by the decision tree.
+#2) Only some of the features are really important out of the 33 features with which we started . We can clearly see grid seach showing the maximum number of features used were 3 and the feature importances showed by the decision tree.
 
-Suggestions 1) My suggestion would be to try feature selection in the early stages and use only those features that have a high relative importance and then train the model. Maybe that will increase the accuracy even more .
+#Suggestions 1) My suggestion would be to try feature selection in the early stages and use only those features that have a high relative importance and then train the model. Maybe that will increase the accuracy even more .
 
-2) After that stacking classifier can be used which eg. using a voting classifier with logistic regression and gradient boosting which should increase the accuracy even more.
+#2) After that stacking classifier can be used which eg. using a voting classifier with logistic regression and gradient boosting which should increase the accuracy even more.
