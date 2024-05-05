@@ -95,7 +95,7 @@ data[data['area_worst']<min_thresold10]
 
 #Discussion: So, what we just did from cell 28 till 44? We are getting top 1% and bottom 1% of the features that are highly correlated with our output, we observe that the values with row# 82, 180, 352, and 461 are repeatedly coming as outlier in the top 1% and the values with row# 46, 101, 151, 538, 539 and 568 are repeatedly coming as outlier in the bottom 1%, it would be better to drop these rows.
 
- data = data.drop(data.index[[46,82,101,151,180,352,461,538,539,568]])
+data = data.drop(data.index[[46,82,101,151,180,352,461,538,539,568]])
 
 target = data.diagnosis
 input_col = data.iloc[:,1:]
