@@ -212,7 +212,7 @@ sns.heatmap(data[[data1.columns[0], data1.columns[1],data1.columns[2],data1.colu
 plt.yticks(rotation=0);
 plt.suptitle('Correlation Matrix')
 
-It can be seen that many of the features are highly correlated with each other 1) radius_mean,perimeter_mean_area_mean,radius_worst,perimeter_worst,area_worst are highly correlated with each other.
+#It can be seen that many of the features are highly correlated with each other 1) radius_mean,perimeter_mean_area_mean,radius_worst,perimeter_worst,area_worst are highly correlated with each other.
 
 2) radius_se,perimeter_se and area_se are highly correlated with each other.
 
