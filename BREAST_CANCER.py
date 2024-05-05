@@ -512,7 +512,7 @@ pred_results=gb_model.predict(X_test)
 accuracy_score(y_test,pred_results)
 
 gb_tech=accuracy_score(y_test,pred_results)
-Gradient Boosting also resulted in an accuracy of 92%
+#Gradient Boosting also resulted in an accuracy of 92%
 
 from sklearn.svm import SVC
 SVC_Gaussian = SVC(kernel='rbf', gamma=0.1,C=10)
