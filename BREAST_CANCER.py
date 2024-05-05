@@ -558,7 +558,7 @@ print(classification_report(y_test, predictions))
 
 print(confusion_matrix(y_test, predictions))
 
-We can see that we achieve an accuracy of 95.28% on the held-out test dataset. From the confusion matrix, there is only 3 case of mis-classification. The performance of this algorithm is expected to be high given the symptoms for breast cancer should exchibit certain clear patterns.
+#We can see that we achieve an accuracy of 95.28% on the held-out test dataset. From the confusion matrix, there is only 3 case of mis-classification. The performance of this algorithm is expected to be high given the symptoms for breast cancer should exchibit certain clear patterns.
 
 #Ridge Classifier¶
 
