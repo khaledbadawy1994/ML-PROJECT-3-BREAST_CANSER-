@@ -214,11 +214,11 @@ plt.suptitle('Correlation Matrix')
 
 #It can be seen that many of the features are highly correlated with each other 1) radius_mean,perimeter_mean_area_mean,radius_worst,perimeter_worst,area_worst are highly correlated with each other.
 
-2) radius_se,perimeter_se and area_se are highly correlated with each other.
+#2) radius_se,perimeter_se and area_se are highly correlated with each other.
 
-3) texture_mean and texture_worst are highly correlated
+#3) texture_mean and texture_worst are highly correlated
 
-4) compactness,concavity,concave_points mean and worst values are also correlated with each other without any pattern which is w quite confusing !
+#4) compactness,concavity,concave_points mean and worst values are also correlated with each other without any pattern which is w quite confusing !
 
 mean_data=data.drop([  'radius_se', 'texture_se', 'perimeter_se', 'area_se', 'smoothness_se',
        'compactness_se', 'concavity_se', 'concave points_se', 'symmetry_se',
