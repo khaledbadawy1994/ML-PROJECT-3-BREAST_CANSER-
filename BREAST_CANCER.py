@@ -321,23 +321,21 @@ for col in predictors:
     sns.scatterplot(x=data[col],y=data['diagnosis'])
     plt.show()
 
-#These scatter plots show that-
+#These scatter plots show that tumors with high radius, area, perimeter and concave points are usually malignant
 
-tumors with high radius, area, perimeter and concave points are usually malignant
-
-Radius_mean
+#Radius_mean
 
 sns.boxplot(data['radius_mean'])
 
-Texture_mean
+#Texture_mean
 
 sns.boxplot(data['texture_mean'])
 
-Area_worst
+#Area_worst
 
 sns.boxplot(data['area_worst'])
 
-Area se
+#Area se
 
 sns.boxplot(data['area_se'])
 
